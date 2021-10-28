@@ -37,3 +37,9 @@ spec:
         - name: wordpress-persistent-storage
           persistentVolumeClaim:
             claimName: wordpress-volume
+        - name: wp-config-php
+          configMap:
+            name: wordpress-config
+            items:
+              - key: wp-config.php
+                path: wp-config.php

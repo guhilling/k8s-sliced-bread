@@ -14,6 +14,11 @@ secretGenerator:
     literals:
       - password=admin
 
+configMapGenerator:
+  - name: wordpress-config
+    files:
+      - wp-config.php
+
 resources:
   - mysql-service.yaml
   - mysql-pvc.yaml
@@ -21,3 +26,4 @@ resources:
   - wordpress-service.yaml
   - wordpress-pvc.yaml
   - wordpress-deployment.yaml
+  - wordpress-route.yaml
